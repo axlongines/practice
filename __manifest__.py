@@ -1,35 +1,26 @@
-# -*- coding: utf-8 -*-
 {
-    'name': "openAcademy",
-
-    'summary': """
-        Short (1 phrase/line) summary of the module's purpose, used as
-        subtitle on modules listing or apps.openerp.com""",
-
-    'description': """
-        Long description of module's purpose
-    """,
-
-    'author': "My Company",
-    'website': "http://www.yourcompany.com",
-
+    "name": "openAcademy",
+    "license": "LGPL-3",
+    "summary": """This is a tecnical module where we can lear about odoo""",
+    "author": "Vauxoo",
+    "website": "http://www.yourcompany.com",
     # Categories can be used to filter modules in modules listing
     # Check https://github.com/odoo/odoo/blob/15.0/odoo/addons/base/data/ir_module_category_data.xml
     # for the full list
-    'category': 'Uncategorized',
-    'version': '0.1',
-
+    "category": "Uncategorized",
+    "version": "15.0.1.0.0",
     # any module necessary for this one to work correctly
-    'depends': ['base'],
-
+    "depends": ["base"],
     # always loaded
-    'data': [
+    "data": [
         # 'security/ir.model.access.csv',
-        'views/views.xml',
-        'views/templates.xml',
+        "views/views.xml",
+        "views/templates.xml",
+        "views/course_view.xml",
     ],
     # only loaded in demonstration mode
-    'demo': [
-        'demo/demo.xml',
+    "demo": [
+        "demo/demo.xml",
+        "demo/course.xml"
     ],
 }

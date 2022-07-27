@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record model="ir.actions.act_window" id="course_action">
+        <field name="name">Course</field>
+        <field name="res_model">course</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+    <menuitem id="menu_courses" parent="menu_root" name="Courses" sequence="3" action="course_action"/>
+
+</odoo>
