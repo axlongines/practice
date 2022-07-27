@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <menuitem id="open_academy_root_menu" name="Open Academy" sequence="1" />
+    <menuitem id="open_academy_course_menu" name="Courses" sequence="1" action="open_academy_course_action" parent="open_academy_root_menu" />
+</odoo>
