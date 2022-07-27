@@ -1,10 +1,45 @@
 <?xml version="1.0" encoding="utf-8"?>
 <odoo>
-    <record model="ir.actions.act_window" id="course_action">
-        <field name="name">Course</field>
+
+    <record model="ir.actions.act_window" id="open_academy_course_action">
+        <field name="name">Courses</field>
         <field name="res_model">course</field>
-        <field name="view_mode">tree,form</field>
+        <field name="view_mode">tree,kanban,form</field>
     </record>
-    <menuitem id="menu_courses" parent="menu_root" name="Courses" sequence="3" action="course_action"/>
+
+    <record model="ir.ui.view" id="open_academy_course_view_action">
+        <field name="name">List courses</field>
+        <field name="model">course</field>
+        <field name="arch" type="xml">
+            <tree>
+                <field name="title" string="Courses" />
+                <field name="description" string="Description" />
+            </tree>
+        </field>
+    </record>
+
+    <record model="ir.ui.view" id="open_academy_course_form_action">
+        <field name="name">form courses</field>
+        <field name="model">course</field>
+        <field name="arch" type="xml">
+            <form>
+                <sheet string="Form course">
+                    <notebook>
+                        <page name="Course information" string="Course information">
+                            <group col="4">
+                                <field name="title" />
+                                <newline />
+                            </group>
+                            <group col="4">
+                                <field name="description" />
+                                <newline />
+                            </group>
+                        </page>
+                    </notebook>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
 
 </odoo>

@@ -1,18 +1,30 @@
 <?xml version='1.0' encoding='utf-8'?>
 <odoo>
-    <data noupdate="0">
-        <record id="react_course" model="open_academy.course">
+        <record id="react_course" model="open.academy.ourse">
             <field name="title">React course</field>
             <field name="description">React course for begginers</field>
         </record>
-        <record id="angular_course" model="open_academy.course">
+        <record id="angular_course" model="open.academy.course">
             <field name="title">Angular course</field>
             <field name="description">Angular course for medium developers</field>
         </record>
-        <record id="vuesjs_course" model="open_academy.course">
+        <record id="vuesjs_course" model="open.academy.course">
             <field name="title">Vuejs course</field>
             <field name="description">Vuejs course for advanced developers</field>
         </record>
-    </data>
-    
+        <record id="course_math_demo" model="open.academy.course">
+            <field name="title">Math</field>
+            <field name="description">Develops algebraic concepts and skills needed to graph and solve linear equations and inequalities. Evaluating algebraic expressions and formulas according to the rules of operations is also developed.
+            </field>
+        </record>
+        <record id="course_spanish_demo" model="open.academy.course">
+            <field name="title">Spanish</field>
+            <field name="description">Is designed to develop listening, speaking, writing, and reading skills in Spanish as well as cultural competency in the Hispanic world. This course is intended for students with no prior knowledge of Spanish or those who have had two years or less of high school Spanish.
+            </field>
+        </record>
+        <record id="course_chemistry_demo" model="open.academy.course">
+            <field name="title">Chemistry</field>
+            <field name="description">Introduction to the general principles of chemistry for students planning a professional career in chemistry, a related science, the health professions, or engineering. Stoichiometry, atomic structure, chemical bonding and geometry, thermochemistry, gases, types of chemical reactions, statistics.
+            </field>
+        </record>
 </odoo>
