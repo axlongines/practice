@@ -1,4 +1,0 @@
-<?xml version="1.0" encoding="utf-8"?>
-<odoo>
-    <menuitem id="list_menu_courses"  name="Courses" sequence="2" action="open_academy_course_action"/>
-</odoo>

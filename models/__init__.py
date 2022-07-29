@@ -1,3 +1,2 @@
+from . import open_academy_course
 
-from . import models
-from . import course

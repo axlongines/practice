@@ -1,0 +1,15 @@
+<?xml version='1.0' encoding='utf-8'?>
+<odoo>
+        <record id="open_academy_course_react_demo" model="open.academy.course">
+            <field name="title">React course</field>
+            <field name="description">React course for begginers</field>
+        </record>
+        <record id="open_academy_course_angular_demo" model="open.academy.course">
+            <field name="title">Angular course</field>
+            <field name="description">Angular course for medium developers</field>
+        </record>
+        <record id="open_academy_course_vuesjs_demo" model="open.academy.course">
+            <field name="title">Vuejs course</field>
+            <field name="description">Vuejs for advanced developers</field>
+        </record>
+</odoo>

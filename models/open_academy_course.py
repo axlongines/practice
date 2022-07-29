@@ -1,7 +1,7 @@
 from odoo import models, fields
 
 
-class Course(models.Model):
+class OpenAcademyCourse(models.Model):
     _name = "open.academy.course"
     _description = "model of courses on open academy"
 

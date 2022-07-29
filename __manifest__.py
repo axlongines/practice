@@ -10,15 +10,17 @@
     "category": "Uncategorized",
     "version": "15.0.1.0.0",
     # any module necessary for this one to work correctly
-    "depends": ["base"],
+    "depends": [
+        "base",
+    ],
     # always loaded
     "data": [
-        'security/ir.model.access.csv',
-        "views/views.xml",
-        "views/templates.xml",
-        "views/course_view.xml",
-        "views/course_menu_view.xml",
+        "security/ir.model.access.csv",
+        "views/open_academy_course_views.xml",
+        "views/open_academy_menu_views.xml",
     ],
     # only loaded in demonstration mode
-    "demo": ["demo/course.xml"],
+    "demo": [
+        "demo/open_academy_course_demo.xml",
+    ],
 }
