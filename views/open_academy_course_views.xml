@@ -40,5 +40,16 @@
         </field>
     </record>
 
+    <record model="ir.ui.view" id="open_academy_course_view_search">
+        <field name="name">open.academy.course.view.search</field>
+        <field name="model">open.academy.course</field>
+        <field name="arch" type="xml">
+            <search>
+                <field name="title" />
+                <field name="description" />
+            </search>
+        </field>
+    </record>
+
 
 </odoo>
