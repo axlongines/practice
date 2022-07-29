@@ -8,4 +8,6 @@ class OpenAcademySession(models.Model):
     name = fields.Char(required=True, size=50)
     duration = fields.Text()
     startDate = fields.Datetime()
-    numberSeats = fields.Intger()
+    numberSeats = fields.Integer()
+    instructor = fields.Many2one("res.partner")
+    course = fields.Many2one("open.academy.course", required=True)

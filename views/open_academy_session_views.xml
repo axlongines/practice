@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <record model="ir.actions.act_window" id="open_academy_session_action">
+        <field name="name">open.academy.session.action</field>
+        <field name="res_model">open.academy.session</field>
+        <field name="view_mode">tree,kanban,form</field>
+    </record>
+
+    <record model="ir.ui.view" id="open_academy_session_view_tree">
+        <field name="name">open.academy.session.view.tree</field>
+        <field name="model">open.academy.session</field>
+        <field name="arch" type="xml">
+            <tree>
+                <field name="name" />
+                <field name="duration" />
+                <field name="numberSeats" />
+                <field name="instructor" />
+                <field name="course" />
+            </tree>
+        </field>
+    </record>
+
+    <record model="ir.ui.view" id="open_academy_session_view_form">
+        <field name="name">open.academy.session.view.form</field>
+        <field name="model">open.academy.session</field>
+        <field name="arch" type="xml">
+            <form>
+                <sheet string="Session">
+                    <group>
+                        <field name="name" />
+                    </group>
+                    <notebook>
+                        <page name="Session information" string="Session information">
+                            <group col="4">
+                                <field name="duration" />
+                                <newline />
+                                <field name="startDate" />
+                                <newline />
+                                <field name="course" />
+                                <newline />
+                                <field name="instructor" />
+                                <newline />
+                                <field name="numberSeats" />
+                                <newline />
+                            </group>
+                        </page>
+                    </notebook>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <!-- <record model="ir.ui.view" id="open_academy_course_view_search">
+        <field name="name">open.academy.session.view.search</field>
+        <field name="model">open.academy.session</field>
+        <field name="arch" type="xml">
+            <search>
+                <field name="title" />
+                <field name="description" />
+                <field name="responsible" />
+            </search>
+        </field>
+    </record> -->
+
+
+</odoo>

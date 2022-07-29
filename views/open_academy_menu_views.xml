@@ -2,4 +2,5 @@
 <odoo>
     <menuitem id="open_academy_root_menu" name="Open Academy" sequence="1" />
     <menuitem id="open_academy_course_menu" name="Courses" sequence="1" action="open_academy_course_action" parent="open_academy_root_menu" />
+    <menuitem id="open_academy_session_menu" name="Session" sequence="2" action="open_academy_session_action" parent="open_academy_root_menu" />
 </odoo>

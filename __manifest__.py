@@ -17,6 +17,7 @@
     "data": [
         "security/ir.model.access.csv",
         "views/open_academy_course_views.xml",
+        "views/open_academy_session_views.xml",
         "views/open_academy_menu_views.xml",
     ],
     # only loaded in demonstration mode

@@ -14,6 +14,7 @@
             <tree>
                 <field name="title" />
                 <field name="description" />
+                <field name="responsible" />
             </tree>
         </field>
     </record>
@@ -32,6 +33,8 @@
                             <group col="4">
                                 <field name="description" />
                                 <newline />
+                                <field name="responsible" />
+                                <newline />
                             </group>
                         </page>
                     </notebook>
@@ -47,6 +50,7 @@
             <search>
                 <field name="title" />
                 <field name="description" />
+                <field name="responsible" />
             </search>
         </field>
     </record>
