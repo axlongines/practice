@@ -14,9 +14,11 @@
             <tree>
                 <field name="title" />
                 <field name="description" />
+                <field name="responsible_id" />
             </tree>
         </field>
     </record>
+
 
     <record model="ir.ui.view" id="open_academy_course_view_form">
         <field name="name">open.academy.course.view.form</field>
@@ -32,11 +34,27 @@
                             <group col="4">
                                 <field name="description" />
                                 <newline />
+                                <field name="responsible_id" />
+                                <newline />
+                                <field name="sessions_ids" />
+                                <newline />
                             </group>
                         </page>
                     </notebook>
                 </sheet>
             </form>
+        </field>
+    </record>
+
+    <record model="ir.ui.view" id="open_academy_course_view_search">
+        <field name="name">open.academy.course.view.search</field>
+        <field name="model">open.academy.course</field>
+        <field name="arch" type="xml">
+            <search>
+                <field name="title" />
+                <field name="description" />
+                <field name="responsible_id" />
+            </search>
         </field>
     </record>
 

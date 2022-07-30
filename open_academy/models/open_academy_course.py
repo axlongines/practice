@@ -7,3 +7,5 @@ class OpenAcademyCourse(models.Model):
 
     title = fields.Char(required=True, size=50)
     description = fields.Text()
+    responsible_id = fields.Many2one("res.users")
+    sessions_ids = fields.One2many("open.academy.session", "course_id")
