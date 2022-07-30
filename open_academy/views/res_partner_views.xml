@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record model="ir.ui.view" id="view_partner_form_inherit">
+        <field name="name">res.partner.view.partner.form.inherit</field>
+        <field name="model">res.partner</field>
+        <field name="inherit_id" ref="base.view_partner_form" />
+        <field name="arch" type="xml">
+            <xpath expr="//field[@name='phone']" position="after">
+                <field name="instructor" />
+                <field name="level_1" />
+                <field name="level_2" />
+                <field name="teacher" />
+            </xpath>
+            <xpath expr="//page[3]" position="after">
+                <page name="sessions" string="sessions">
+                    <field name="sessions_ids" />
+                </page>
+            </xpath>
+        </field>
+    </record>
+</odoo>
