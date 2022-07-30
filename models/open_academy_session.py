@@ -9,5 +9,6 @@ class OpenAcademySession(models.Model):
     duration = fields.Text()
     startDate = fields.Datetime()
     numberSeats = fields.Integer()
-    instructor = fields.Many2one("res.partner")
+    instructor = fields.Many2one("res.partner", "instructor")
     course = fields.Many2one("open.academy.course", required=True)
+    attendes = fields.Many2many("res.partner", "attendees")

@@ -17,6 +17,7 @@
                 <field name="numberSeats" />
                 <field name="instructor" />
                 <field name="course" />
+                <field name="attendes" />
             </tree>
         </field>
     </record>
@@ -43,6 +44,8 @@
                                 <newline />
                                 <field name="numberSeats" />
                                 <newline />
+                                <field name="attendes" />
+                                <newline />
                             </group>
                         </page>
                     </notebook>
@@ -50,18 +53,5 @@
             </form>
         </field>
     </record>
-
-    <!-- <record model="ir.ui.view" id="open_academy_course_view_search">
-        <field name="name">open.academy.session.view.search</field>
-        <field name="model">open.academy.session</field>
-        <field name="arch" type="xml">
-            <search>
-                <field name="title" />
-                <field name="description" />
-                <field name="responsible" />
-            </search>
-        </field>
-    </record> -->
-
 
 </odoo>

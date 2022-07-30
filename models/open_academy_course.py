@@ -8,4 +8,4 @@ class OpenAcademyCourse(models.Model):
     title = fields.Char(required=True, size=50)
     description = fields.Text()
     responsible = fields.Many2one("res.users")
-    sessions = fields.One2many("open.academy.session")
+    sessions = fields.One2many("open.academy.session", "course")

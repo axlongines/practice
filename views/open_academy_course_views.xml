@@ -15,9 +15,11 @@
                 <field name="title" />
                 <field name="description" />
                 <field name="responsible" />
+                <field name="sessions" />
             </tree>
         </field>
     </record>
+
 
     <record model="ir.ui.view" id="open_academy_course_view_form">
         <field name="name">open.academy.course.view.form</field>
@@ -34,6 +36,8 @@
                                 <field name="description" />
                                 <newline />
                                 <field name="responsible" />
+                                <newline />
+                                <field name="sessions" />
                                 <newline />
                             </group>
                         </page>
@@ -54,6 +58,5 @@
             </search>
         </field>
     </record>
-
 
 </odoo>
