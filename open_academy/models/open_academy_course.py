@@ -9,3 +9,16 @@ class OpenAcademyCourse(models.Model):
     description = fields.Text()
     responsible_id = fields.Many2one("res.users")
     sessions_ids = fields.One2many("open.academy.session", "course_id")
+
+    _sql_constraints = [
+        ("title_description_different", "CHECK(title!=description)",
+         "The title and description must be different."),
+        ("title_unique", "UNIQUE(title)",
+         "This course title is already taken."),
+    ]
+
+    def copy(self, default=None):
+        if default is None:
+            default = {}
+        default["title"] = "Copy of %s" % self.title
+        return super().copy(default=default)
