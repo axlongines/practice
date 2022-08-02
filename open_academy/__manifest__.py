@@ -15,10 +15,12 @@
     ],
     # always loaded
     "data": [
+        "security/course_security.xml",
         "security/ir.model.access.csv",
         "views/open_academy_course_views.xml",
         "views/open_academy_session_views.xml",
         "views/open_academy_menu_views.xml",
+        # "views/open_academy_wizard_views.xml",
         "views/res_partner_views.xml",
     ],
     # only loaded in demonstration mode
