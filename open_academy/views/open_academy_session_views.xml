@@ -4,19 +4,60 @@
     <record model="ir.actions.act_window" id="open_academy_session_action">
         <field name="name">open.academy.session.action</field>
         <field name="res_model">open.academy.session</field>
-        <field name="view_mode">tree,kanban,form</field>
+        <field name="view_mode">tree,kanban,form,graph,calendar</field>
     </record>
 
     <record model="ir.ui.view" id="open_academy_session_view_tree">
         <field name="name">open.academy.session.view.tree</field>
         <field name="model">open.academy.session</field>
         <field name="arch" type="xml">
-            <tree>
+            <tree decoration-info="duration&lt;5" decoration-danger="duration&gt;15">
                 <field name="name" />
                 <field name="duration" />
                 <field name="number_seats" />
+                <field name="available_seats_computed" widget="progressbar" />
                 <field name="instructor_id" />
             </tree>
+        </field>
+    </record>
+
+    <record model="ir.ui.view" id="open_academy_session_view_graph">
+        <field name="name">open.academy.session.view.graph</field>
+        <field name="model">open.academy.session</field>
+        <field name="arch" type="xml">
+            <graph string="Asistance graph">
+                <field name="course_id" />
+                <field name="number_seats_taken" type="measure" />
+            </graph>
+        </field>
+    </record>
+
+    <record model="ir.ui.view" id="open_academy_session_view_kanban">
+        <field name="name">open.academy.session.view.kanban</field>
+        <field name="model">open.academy.session</field>
+        <field name="arch" type="xml">
+            <kanban string="Kanban sessions"  default_group_by="course_id">
+                <templates>
+                    <t t-name="kanban-box">
+                        <div t-attf-class="oe_kanban_card oe_kanban_global_click">
+                            <div class="o_kanban_card_content">
+                                <field name="name" />
+                            </div>
+                        </div>
+                    </t>
+                </templates>
+            </kanban>
+
+        </field>
+    </record>
+
+    <record model="ir.ui.view" id="open_academy_session_view_calendar">
+        <field name="name">open.academy.session.view.calendar</field>
+        <field name="model">open.academy.session</field>
+        <field name="arch" type="xml">
+            <calendar string="Sessions" date_start="start_date" color="course_id">
+                <field name="name" />
+            </calendar>
         </field>
     </record>
 
@@ -36,11 +77,15 @@
                                 <newline />
                                 <field name="start_date" />
                                 <newline />
+                                <field name="end_date" />
+                                <newline />
                                 <field name="course_id" />
                                 <newline />
                                 <field name="instructor_id" domain="['|', '|', ('instructor', '=', True), ('category_id.name', 'ilike', 'Teacher'), ('category_id.name', 'ilike', 'Level%')]" />
                                 <newline />
                                 <field name="number_seats" />
+                                <newline />
+                                <field name="number_seats_taken" />
                                 <newline />
                                 <field name="attendees_ids" />
                                 <newline />
