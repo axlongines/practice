@@ -4,6 +4,7 @@
     <record model="ir.actions.act_window" id="open_academy_course_action">
         <field name="name">open.academy.course.action</field>
         <field name="res_model">open.academy.course</field>
+        <field name="context">{'search_default_my_courses': 1} </field>
         <field name="view_mode">tree,kanban,form</field>
     </record>
 
@@ -19,6 +20,23 @@
         </field>
     </record>
 
+    <record model="ir.ui.view" id="open_academy_course_view_search">
+        <field name="name">open.academy.course.view.search</field>
+        <field name="model">open.academy.course</field>
+        <field name="arch" type="xml">
+            <search>
+                <field name="title" />
+                <field name="description" />
+
+                <filter name="my_courses" string="My courses" domain="[('responsible_id', '=', uid)]" />
+                <group string="Group By">
+                    <filter name="group_by_responsible" string="Responsible"
+                            context="{'group_by': 'responsible_id'}"/>
+                </group>
+
+            </search>
+        </field>
+    </record>
 
     <record model="ir.ui.view" id="open_academy_course_view_form">
         <field name="name">open.academy.course.view.form</field>
@@ -37,24 +55,11 @@
                                 <field name="responsible_id" />
                                 <newline />
                                 <field name="sessions_ids" />
-                                <newline />
                             </group>
                         </page>
                     </notebook>
                 </sheet>
             </form>
-        </field>
-    </record>
-
-    <record model="ir.ui.view" id="open_academy_course_view_search">
-        <field name="name">open.academy.course.view.search</field>
-        <field name="model">open.academy.course</field>
-        <field name="arch" type="xml">
-            <search>
-                <field name="title" />
-                <field name="description" />
-                <field name="responsible_id" />
-            </search>
         </field>
     </record>
 
