@@ -11,14 +11,14 @@ class OpenAcademyCourse(models.Model):
     sessions_ids = fields.One2many("open.academy.session", "course_id")
 
     _sql_constraints = [
-        ("title_description_diferents","check(title!=description)","the title and the description must be diferents"),
-        ("title_unique","unique(title)","this course title is already taken "),
+        ("title_description_diferents", "check(title!=description)",
+        "the title and the description must be diferents"),("title_unique", "unique(title)",
+        "this course title is already taken "),
     ]
 
-    def copy(self,default=None):
-        if default==None:
+    def copy(self, default=None):
+        if default == None:
             default = {}
-        
         default["title"] = self.title + " copy"
-        rtn = super(OpenAcademyCourse,self).copy(default=default)
+        rtn = super(OpenAcademyCourse, self).copy(default=default)
         return rtn

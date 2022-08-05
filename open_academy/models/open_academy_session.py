@@ -16,14 +16,13 @@ class OpenAcademySession(models.Model):
     instructor_id = fields.Many2one("res.partner", "instructor")
     course_id = fields.Many2one("open.academy.course", required=True)
     attendees_ids = fields.Many2many("res.partner", "session_res_partner_rel")
-    available_seats = fields.Integer(compute="percentage_computed")
-
+    available_seats_computed = fields.Integer(compute="percentage_computed")
 
     @api.depends("number_seats", "number_seats_taken")
     def percentage_computed(self):
-        for fields in self:
-            available = fields.number_seats - fields.number_seats_taken
-            fields.available_seats = (available / fields.number_seats) * 100
+        for records in self:
+            available = records.number_seats - records.number_seats_taken
+            records.available_seats_computed = (available / records.number_seats) * 100
 
     @api.onchange("number_seats_taken")
     def _onchange_number_seats_taken(self):

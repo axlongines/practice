@@ -15,7 +15,7 @@
                 <field name="name" />
                 <field name="duration" />
                 <field name="number_seats" />
-                <field name="available_seats" widget="progressbar" />
+                <field name="available_seats_computed" widget="progressbar" />
                 <field name="instructor_id" />
             </tree>
         </field>
@@ -96,6 +96,5 @@
             </form>
         </field>
     </record>
-
 
 </odoo>
