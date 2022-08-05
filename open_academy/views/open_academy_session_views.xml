@@ -36,7 +36,7 @@
         <field name="name">open.academy.session.view.kanban</field>
         <field name="model">open.academy.session</field>
         <field name="arch" type="xml">
-            <kanban string="Kanban sessions"  default_group_by="course_id">
+            <kanban string="Kanban sessions" default_group_by="course_id">
                 <templates>
                     <t t-name="kanban-box">
                         <div t-attf-class="oe_kanban_card oe_kanban_global_click">
@@ -81,7 +81,7 @@
                                 <newline />
                                 <field name="course_id" />
                                 <newline />
-                                <field name="instructor_id" domain="['|','|','|',('instructor', '=', True),('level_1', '=', True),('level_2', '=', True),('teacher', '=', True)]" />
+                                <field name="instructor_id" domain="['|', '|', ('instructor', '=', True), ('category_id.name', 'ilike', 'Teacher'), ('category_id.name', 'ilike', 'Level%')]" />
                                 <newline />
                                 <field name="number_seats" />
                                 <newline />

@@ -16,6 +16,7 @@
                 <field name="title" />
                 <field name="description" />
                 <field name="responsible_id" />
+                <field name="responsible_id" />
             </tree>
         </field>
     </record>
@@ -53,8 +54,6 @@
                                 <field name="description" />
                                 <newline />
                                 <field name="responsible_id" />
-                                <newline />
-                                <field name="sessions_ids" />
                                 <newline />
                             </group>
                         </page>

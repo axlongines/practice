@@ -1,12 +1,35 @@
 <?xml version="1.0" encoding="utf-8"?>
 <odoo>
 
-    <record id="launch_the_wizard" model="ir.actions.act_window">
-        <field name="name">Launch the Wizard</field>
+
+    <record id="open_academy_wizard_view_form" model="ir.ui.view">
+        <field name="name">open.academy.wizard.view.form</field>
+        <field name="model">open.academy.wizard</field>
+        <field name="arch" type="xml">
+            <form string="">
+                <sheet>
+                    <group>
+                        <field name="sessions_id" />
+                        <newline />
+                        <field name="attendees_ids" />
+                        <newline />
+                    </group>
+                    <footer>
+                        <button name="add_partners" type="object" string="Add partners" class="oe_highlight" />
+                        <button special="cancel" string="Discard" />
+                    </footer>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <record id="open_academy_acition_add_atetendees" model="ir.actions.act_window">
+        <field name="name">Add atetendees</field>
         <field name="res_model">open.academy.wizard</field>
         <field name="view_mode">form</field>
         <field name="target">new</field>
-        <field name="binding_model_id" ref="open.academy.session" />
+        <field name="binding_model_id" ref="model_open_academy_session" />
+        <field name="view_id" ref="open_academy_wizard_view_form"/>
     </record>
 
 </odoo>
