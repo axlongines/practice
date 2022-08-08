@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <record model="ir.actions.act_window" id="act_session_calendar_view">
+        <field name="name">Calendar of sessions </field>
+        <field name="view_mode">calendar</field>
+        <field name="res_model">open.academy.session</field>
+        <field name="view_id" ref="open_academy_session_view_calendar" />
+    </record>
+
+    <record model="ir.actions.act_window" id="act_session_graph_view">
+        <field name="name">Attendees by course</field>
+        <field name="res_model">open.academy.session</field>
+        <field name="view_mode">graph</field>
+        <field name="view_id" ref="open_academy_session_view_graph" />
+    </record>
+
+    <record model="ir.ui.view" id="open_academy_dashboard_template">
+        <field name="name">Academy dashboard</field>
+        <field name="model">board.board</field>
+        <field name="type">form</field>
+        <field name="arch" type="xml">
+            <form string="Session Dashboard">
+                <board style="2-1" >
+                    <column>
+                        <action string="Courses" name="%(open_academy_course_action)d" />
+                    </column>
+                    <column>
+                        <action string="Atendees by session" name="%(act_session_graph_view)d" />
+                        <action string="Atendees by session" name="%(act_session_calendar_view)d" />
+                    </column>
+                </board>
+            </form>
+        </field>
+    </record>
+
+
+    <record id="open_academy_dashboard_action" model="ir.actions.act_window">
+        <field name="name">open.academy.dashboard.action</field>
+        <field name="res_model">board.board</field>
+        <field name="view_mode">form</field>
+        <field name="view_id" ref="open_academy_dashboard_template" />
+    </record>
+
+
+</odoo>
