@@ -1,4 +1,4 @@
-from odoo import models, fields, api
+from odoo import models, fields, api, _
 from odoo.exceptions import ValidationError
 
 
@@ -35,15 +35,15 @@ class OpenAcademySession(models.Model):
         if self.number_seats  < 0:
             return {
                 "warning": {
-                    "title": "Incorrect 'seats' value.",
-                    "message": "The number of available seats may not be negative.",
+                    "title": _("Incorrect 'seats' value."),
+                    "message": _("The number of available seats may not be negative."),
                 }
             }
         if len(self.attendees_ids) > self.number_seats:
             return {
                 "warning": {
-                    "title": "Too many attendees.",
-                    "message": "There are more attendees than seats.",
+                    "title": _("Too many attendees."),
+                    "message": _("There are more attendees than seats."),
                 }
             }
 
@@ -51,4 +51,4 @@ class OpenAcademySession(models.Model):
     def _check_instructor_id(self):
         for record in self.filtered('instructor_id'):
             if record.instructor_id in record.attendees_ids:
-                raise ValidationError("The instructor can't be also an attendee.")
+                raise ValidationError(_("The instructor can't be also an attendee."))

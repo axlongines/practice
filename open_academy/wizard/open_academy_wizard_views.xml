@@ -23,8 +23,8 @@
         </field>
     </record>
 
-    <record id="open_academy_acition_add_atetendees" model="ir.actions.act_window">
-        <field name="name">Add atetendees</field>
+    <record id="open_academy_action_add_attendees" model="ir.actions.act_window">
+        <field name="name">Add attendees</field>
         <field name="res_model">open.academy.wizard</field>
         <field name="view_mode">form</field>
         <field name="target">new</field>
