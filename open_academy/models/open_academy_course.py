@@ -1,4 +1,4 @@
-from odoo import models, fields
+from odoo import models, fields, _
 
 
 class OpenAcademyCourse(models.Model):
@@ -12,13 +12,13 @@ class OpenAcademyCourse(models.Model):
 
     _sql_constraints = [
         ("title_description_different", "CHECK(title!=description)",
-         "The title and description must be different."),
+         _("The title and description must be different.")),
         ("title_unique", "UNIQUE(title)",
-         "This course title is already taken."),
+         _("This course title is already taken.")),
     ]
 
     def copy(self, default=None):
         if default is None:
             default = {}
-        default["title"] = "Copy of %s" % self.title
+        default["title"] = _("Copy of ") + self.title
         return super().copy(default=default)
