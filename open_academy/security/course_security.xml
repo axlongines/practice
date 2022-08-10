@@ -6,7 +6,7 @@
     </record>
 
     <record id="open_academy_course_rule_group_manager" model="ir.rule">
-        <field name="name">Only responsible can modified course</field>
+        <field name="name">Only responsible can modify course</field>
         <field name="model_id" ref="model_open_academy_course" />
         <field name="groups" eval="[Command.link(ref('open_academy.open_academy_course_group_manager'))]" />
         <field name="perm_read" eval="False" />

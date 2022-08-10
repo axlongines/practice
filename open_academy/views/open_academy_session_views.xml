@@ -15,7 +15,7 @@
                 <field name="name" />
                 <field name="duration" />
                 <field name="number_seats" />
-                <field name="available_seats_computed" widget="progressbar" />
+                <field name="number_seats_taken" widget="progressbar" />
                 <field name="instructor_id" />
             </tree>
         </field>
@@ -27,7 +27,7 @@
         <field name="arch" type="xml">
             <graph string="Asistance graph">
                 <field name="course_id" />
-                <field name="number_seats_taken" type="measure" />
+                <field name="attendees_count" type="measure" />
             </graph>
         </field>
     </record>
